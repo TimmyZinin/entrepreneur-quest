@@ -8,7 +8,7 @@
     "fixed_first": "s01_exposition",
     "fixed_penultimate": "s06_four_day_week",
     "fixed_last": "s07_conference",
-    "structure_rule": "Act I (s01 fixed first, s02) → Act II (5 scenes from middle pool, act=2) → Act III (s06 fixed penultimate, s07 fixed last)",
+    "structure_rule": "Act I (s01 fixed first + s02 act=1) → Act II (3 scenes shuffled from act=2 pool) → Act III (s06 fixed penultimate + s07 fixed last) = 7 scenes total",
     "resources": {
       "energy": { "start": 50, "icon": "⚡", "label": "Энергия", "primary": true },
       "cash": { "start": 50, "icon": "₽", "label": "Деньги", "primary": false },

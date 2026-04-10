@@ -61,10 +61,10 @@ function resolveEnding(state, reachedFinal) {
 }
 
 function pickScenes(rand) {
-  // Enforce 3-act structure:
-  //   Act I: fixed first (s01) + 1 act-1 scene (s02)
-  //   Act II: 4 act-2 scenes shuffled from pool (s03, s04, s05, s08, s09, s10)
-  //   Act III: fixed penultimate (s06) + fixed last (s07)
+  // Enforce 3-act structure (7 scenes total):
+  //   Act I: fixed first (s01) + 1 act-1 scene (s02) = 2
+  //   Act II: 3 act-2 scenes shuffled from pool = 3
+  //   Act III: fixed penultimate (s06) + fixed last (s07) = 2
   const fixedFirst = data.scenes.find(s => s.fixed === 'first');
   const fixedPenultimate = data.scenes.find(s => s.fixed === 'penultimate');
   const fixedLast = data.scenes.find(s => s.fixed === 'last');
@@ -81,7 +81,7 @@ function pickScenes(rand) {
   // Pick 1 from act1NonFixed (there should be exactly one — s02)
   const act1Pick = act1NonFixed.length > 0 ? act1NonFixed[0] : act2.shift();
 
-  // Pick 3 from act2 (total 7 scenes: 1 first + 1 act1 + 3 act2 + penultimate + last = 7)
+  // Pick 3 from act2 pool (7 total: 1 first + 1 act1 + 3 act2 + penultimate + last)
   const act2Picks = act2.slice(0, 3);
 
   return [fixedFirst, act1Pick, ...act2Picks, fixedPenultimate, fixedLast];
