@@ -2,6 +2,16 @@
 
 (prepend-only; most recent at top)
 
+## Sprint timeline
+
+```mermaid
+graph LR
+  S0[S0 Retro Audit<br/>10/10 r5] --> S2[S2 Docs + Proxy<br/>10/10 r3]
+  S2 --> S3[S3 Art + Gameplay<br/>10/10 r2]
+  S3 --> S6[S6 Deploy + Verify<br/>v1.0 Launch]
+  S6 --> S7[S7 Launch Kit<br/>Day 2]
+```
+
 ## 2026-04-11 — v1.0 Launch
 
 ### S6 — Deploy & Verify

@@ -7,24 +7,24 @@ flowchart LR
   Dev[Dev local] -->|git push| GHRepo1[TimmyZinin/entrepreneur-quest]
   Dev -->|copy subfolder| GHRepo2[TimmyZinin/timmyzinin.github.io]
   GHRepo2 -->|GH Pages build| Pages[GitHub Pages]
-  DNS[timzinin.com A records] -->|185.199.108-111.153| Pages
+  DNS[timzinin.com A records] -->|GitHub Pages edge| Pages
   Pages -->|serve| User[User browser]
   User -->|fetch POST| Proxy[lead-proxy Docker]
   Proxy -->|TG API| Bot[Telegram]
-  VPS[Contabo VPS 30<br/>185.202.239.165] -.hosts.-> Proxy
+  VPS[Contabo VPS 30] -.hosts.-> Proxy
   Nginx[marshall.timzinin.com<br/>nginx] -.routes /quest-api/.-> Proxy
 ```
 
 ## Primary domain DNS
 
-- `timzinin.com` → GitHub Pages A records (185.199.108.153 / .109 / .110 / .111)
-- Root repo: `TimmyZinin/timmyzinin.github.io` (a.k.a. `ai-marketing-wizard`)
+- `timzinin.com` → GitHub Pages (A records to GH Pages edge)
+- Root repo: `TimmyZinin/timmyzinin.github.io`
 - Subfolder: `entrepreneur-quest/` → served at `https://timzinin.com/entrepreneur-quest/`
 
 ## FastAPI proxy deploy (Contabo VPS 30)
 
 ```bash
-ssh root@185.202.239.165
+ssh <contabo-host>
 cd /opt/lead-proxy
 # edit .env — LEADGAME_BOT_TOKEN, LEAD_CHAT_ID
 docker compose up -d --build
