@@ -6,7 +6,9 @@
     "scene_count_shown": 7,
     "pool_size": 10,
     "fixed_first": "s01_exposition",
+    "fixed_penultimate": "s06_four_day_week",
     "fixed_last": "s07_conference",
+    "structure_rule": "Act I (s01 fixed first, s02) → Act II (5 scenes from middle pool, act=2) → Act III (s06 fixed penultimate, s07 fixed last)",
     "resources": {
       "energy": { "start": 50, "icon": "⚡", "label": "Энергия", "primary": true },
       "cash": { "start": 50, "icon": "₽", "label": "Деньги", "primary": false },
@@ -145,6 +147,7 @@
     {
       "id": "s06_four_day_week",
       "act": 3,
+      "fixed": "penultimate",
       "scene_image": "img/scenes/s06.webp",
       "headline": "Slack, четверг",
       "intro": "Команда прислала файл. \"Манифест\". Они просят четырёхдневную неделю. Аргументы — на три страницы. Усталость — на их лицах.",

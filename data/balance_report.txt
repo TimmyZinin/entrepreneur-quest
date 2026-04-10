@@ -1,13 +1,13 @@
 === Balance Simulation Report ===
 Runs: 1000
-Completion rate (7/7 scenes): 96.1% ✓ (target ≥70%)
+Completion rate (7/7 scenes): 96.7% ✓ (target ≥70%)
 Early game over (<scene 4): 0.0% ✓ (target ≤15%)
-Avg scenes reached: 6.93 ✓ (target 6.0-7.0)
+Avg scenes reached: 6.95 ✓ (target 6.0-7.0)
 
 Archetype distribution:
-  exit        136 (13.6%) ✓ (target ≥5%)
-  growth      425 (42.5%) ✓ (target ≥5%)
-  burnout     354 (35.4%) ✓ (target ≥5%)
-  phoenix      85 (8.5%) ✓ (target ≥5%)
+  exit        121 (12.1%) ✓ (target ≥5%)
+  growth      448 (44.8%) ✓ (target ≥5%)
+  burnout     335 (33.5%) ✓ (target ≥5%)
+  phoenix      96 (9.6%) ✓ (target ≥5%)
 
 ✓ ALL TARGETS MET
