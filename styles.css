@@ -84,12 +84,9 @@ body {
 }
 .mute-toggle:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 
-/* Screens */
-.screen {
-  display: none;
-  animation: fadeUp 0.4s ease both;
-}
-.screen-active { display: block; }
+/* Screens — hidden attribute wins over id selectors */
+[hidden] { display: none !important; }
+.screen { animation: fadeUp 0.4s ease both; }
 
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(16px); }
