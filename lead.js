@@ -38,13 +38,16 @@
   }
 
   function validateForm(data) {
-    if (!data.name || data.name.length < 1 || data.name.length > NAME_MAX) {
+    const name = (data.name || '').trim();
+    const handle = (data.handle || '').trim();
+    const pain = (data.pain || '').trim();
+    if (!name || name.length < 1 || name.length > NAME_MAX) {
       return 'Представься, пожалуйста';
     }
-    if (!HANDLE_RE.test(data.handle)) {
+    if (!HANDLE_RE.test(handle)) {
       return 'Telegram username: @ и от 3 до 32 символов (буквы, цифры, _)';
     }
-    if (!data.pain || data.pain.length < 1 || data.pain.length > PAIN_MAX) {
+    if (!pain || pain.length < 1 || pain.length > PAIN_MAX) {
       return 'Опиши, что болит — хотя бы пару слов';
     }
     return null;

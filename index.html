@@ -7,7 +7,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="theme-color" content="#1A1614">
 
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://umami.timzinin.com 'unsafe-inline'; connect-src 'self' https://marshall.timzinin.com https://umami.timzinin.com; img-src 'self' data: blob:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; media-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self' https://marshall.timzinin.com">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://umami.timzinin.com; connect-src 'self' https://marshall.timzinin.com https://umami.timzinin.com; img-src 'self' data: blob:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; media-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self' https://marshall.timzinin.com">
 
 <title>Год Марины — браузерная история про предпринимателя</title>
 <meta name="description" content="Интерактивная история в 7 сценах. Каждый выбор меняет судьбу студии. Какой будет твоя концовка?">
@@ -153,7 +153,7 @@
         </label>
         <button type="submit" id="lead-submit" class="btn btn-primary">Отправить Тиму</button>
         <p class="lead-disclaimer">Твоё сообщение придёт Тиму в Telegram. Ответит в течение 24 часов.</p>
-        <p id="lead-error" class="lead-error" hidden></p>
+        <p id="lead-error" class="lead-error" role="alert" aria-live="assertive" hidden></p>
       </form>
     </div>
   </section>

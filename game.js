@@ -27,6 +27,11 @@
     if (el) {
       el.hidden = false;
       el.classList.add('screen-active');
+      // Move keyboard focus to first actionable element in new screen
+      const focusable = el.querySelector('button:not([disabled]), input:not([disabled]), a[href], [tabindex]:not([tabindex="-1"])');
+      if (focusable) {
+        setTimeout(() => focusable.focus({ preventScroll: true }), 50);
+      }
     }
     window.scrollTo(0, 0);
   }

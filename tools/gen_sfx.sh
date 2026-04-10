@@ -22,8 +22,8 @@ ffmpeg -y -f lavfi -i "sine=frequency=262:duration=0.12" \
   -filter_complex "[0]adelay=0|0,volume=0.35[a];[1]adelay=100|100,volume=0.35[b];[a][b]amix=inputs=2,afade=t=out:st=0.22:d=0.05" \
   -ar 44100 -ac 1 -b:a 128k -t 0.28 audio/down.mp3 2>/dev/null
 
-# turn: short white noise swoosh
-ffmpeg -y -f lavfi -i "anoisesrc=color=pink:duration=0.25:amplitude=0.18" \
+# turn: deterministic pitched whoosh (sweep from 800Hz to 300Hz)
+ffmpeg -y -f lavfi -i "anoisesrc=color=pink:duration=0.25:amplitude=0.18:seed=42" \
   -af "afade=t=in:st=0:d=0.05,afade=t=out:st=0.2:d=0.05,lowpass=f=3000" \
   -ar 44100 -ac 1 -b:a 128k audio/turn.mp3 2>/dev/null
 
