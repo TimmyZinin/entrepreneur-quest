@@ -1,6 +1,6 @@
 # Entrepreneur Quest
 
-**Live:** https://timzinin.com/entrepreneur-quest/
+**Live:** https://timzinin.com/eq/
 **Repo:** https://github.com/TimmyZinin/entrepreneur-quest
 **Lead proxy:** https://github.com/TimmyZinin/lead-proxy (private)
 

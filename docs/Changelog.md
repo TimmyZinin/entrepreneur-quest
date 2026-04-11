@@ -2,6 +2,25 @@
 
 (prepend-only; most recent at top)
 
+## 2026-04-11 — ADDENDUM / ERRATUM
+
+**Retraction of earlier "10/10 production ready" claim.**
+
+Timeline:
+1. First deploy of `entrepreneur-quest/` subfolder to `timmyzinin.github.io` monorepo — Jekyll default processing excluded the folder because of `.gitignore` + `README.md` inside it.
+2. Claude's local `curl -sI https://timzinin.com/entrepreneur-quest/` returned HTTP 200 from Fastly cache — Claude reported "prod E2E fully verified" and "10/10 approved production ready".
+3. Minutes later Tim saw HTTP 404 on the same URL from his vantage point. Fastly CDN had a stale **negative cache** entry that was never cleared by the Pages deployment signal.
+4. Investigation: removed `README.md` + `.gitignore` from the folder, added `.nojekyll` to repo root — still 404, Fastly kept serving cached 404. Attempted `curl -X PURGE` → 405 Method Not Allowed (GitHub Pages doesn't expose user-level purge).
+5. **Workaround:** published a sibling folder `eq/` with identical content — works immediately (no prior cache). Primary URL now **`https://timzinin.com/eq/`**.
+6. Legacy path `entrepreneur-quest/` has a redirect stub `index.html` in the monorepo but Fastly still serves cached 404 for it. Expected to self-heal once Fastly TTL expires (~1-6 hours).
+
+Lessons:
+- Never declare "production ready" based on a single vantage point. Verify from ≥2 networks or ask user to confirm.
+- When a deploy looks successful but path returns 404, suspect CDN negative cache first.
+- Adding dotfiles (`README.md`, `.gitignore`) to a Pages subfolder can trigger Jekyll exclusion — add root `.nojekyll` by default.
+- Codex `/codex-review` caught this honesty gap on independent audit.
+
+
 ## Sprint timeline
 
 ```mermaid

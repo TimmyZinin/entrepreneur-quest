@@ -19,7 +19,7 @@ flowchart LR
 
 - `timzinin.com` → GitHub Pages (A records to GH Pages edge)
 - Root repo: `TimmyZinin/timmyzinin.github.io`
-- Subfolder: `entrepreneur-quest/` → served at `https://timzinin.com/entrepreneur-quest/`
+- Subfolder: `eq/` → served at `https://timzinin.com/eq/`
 
 ## FastAPI proxy deploy (Contabo VPS 30)
 
@@ -50,17 +50,17 @@ Reload: `nginx -t && systemctl reload nginx`.
 
 ```bash
 # Page 200
-curl -sI https://timzinin.com/entrepreneur-quest/
+curl -sI https://timzinin.com/eq/
 # → HTTP/2 200 server: GitHub.com
 
 # SPA render check
-curl -s https://r.jina.ai/https://timzinin.com/entrepreneur-quest/
+curl -s https://r.jina.ai/https://timzinin.com/eq/
 # → should contain "Год Марины" + scene 1 content
 
 # Assets
-curl -sI https://timzinin.com/entrepreneur-quest/data/scenes.json
-curl -sI https://timzinin.com/entrepreneur-quest/audio/bgm.mp3
-curl -sI https://timzinin.com/entrepreneur-quest/img/hero.webp
+curl -sI https://timzinin.com/eq/data/scenes.json
+curl -sI https://timzinin.com/eq/audio/bgm.mp3
+curl -sI https://timzinin.com/eq/img/hero.webp
 # → all HTTP/2 200
 
 # Proxy health
